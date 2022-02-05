@@ -1,0 +1,67 @@
+{
+    "cells": [
+        {
+            "language": "markdown",
+            "source": [
+                "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Required**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Equality In An Array](https://www.hackerrank.com/challenges/equality-in-a-array/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                "'use strict';\r\n\r\nconst fs = require('fs');\r\n\r\nprocess.stdin.resume();\r\nprocess.stdin.setEncoding('utf-8');\r\n\r\nlet inputString = '';\r\nlet currentLine = 0;\r\n\r\nprocess.stdin.on('data', function(inputStdin) {\r\n    inputString += inputStdin;\r\n});\r\n\r\nprocess.stdin.on('end', function() {\r\n    inputString = inputString.split('\\n');\r\n\r\n    main();\r\n});\r\n\r\nfunction readLine() {\r\n    return inputString[currentLine++];\r\n}\r\n\r\n/*\r\n * Complete the 'equalizeArray' function below.\r\n *\r\n * The function is expected to return an INTEGER.\r\n * The function accepts INTEGER_ARRAY arr as parameter.\r\n */\r\n\r\nfunction equalizeArray(arr) {\r\n    let count_nonEqual=0;\r\n    let highestCount=0;\r\n    let testing_num=0;\r\n    let result_num=0;\r\n    for(let i=0;i<arr.length;i++){\r\n        let count=0;\r\n        for(let j=0;j<arr.length;j++){\r\n            if(arr[i]==arr[j]&&i!=j){\r\n                count++;\r\n                testing_num=arr[i];\r\n            }\r\n            if(j==arr.length-1){\r\n                if(count>highestCount){\r\n                    highestCount=count;\r\n                    result_num=testing_num;\r\n                    \r\n                }\r\n            }\r\n        }\r\n    }\r\n    if(result_num!=0){\r\n    for(let m=0;m<arr.length;m++){\r\n        if(result_num!=arr[m]){\r\n            count_nonEqual++;\r\n        }\r\n    }\r\n      return count_nonEqual;\r\n    }else{\r\n        return arr.length-1;\r\n    }\r\n  \r\n\r\n}\r\n\r\nfunction main() {\r\n    const ws = fs.createWriteStream(process.env.OUTPUT_PATH);\r\n\r\n    const n = parseInt(readLine().trim(), 10);\r\n\r\n    const arr = readLine().replace(/\\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));\r\n\r\n    const result = equalizeArray(arr);\r\n\r\n    ws.write(result + '\\n');\r\n\r\n    ws.end();\r\n}\r\n"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "### **Optional**:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Halloween Sale](https://www.hackerrank.com/challenges/halloween-sale/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        },
+        {
+            "language": "markdown",
+            "source": [
+                "#####  [Sherlock And Squares](https://www.hackerrank.com/challenges/sherlock-and-squares/problem?isFullScreen=true)\n\nSolution:"
+            ],
+            "outputs": []
+        },
+        {
+            "language": "javascript",
+            "source": [
+                ""
+            ],
+            "outputs": []
+        }
+    ]
+}
