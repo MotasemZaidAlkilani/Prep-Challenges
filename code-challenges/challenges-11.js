@@ -120,8 +120,20 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
-    // write your code here
+    
+        let sum=0;
+    let result=arr.map(value=>{
+        sum=0;
+        for(let i=0;i<value.gradsList.length;i++){
+            sum+=value.gradsList[i];
+        }
+              value['avg']=sum/value.gradsList.length;   
+            return value;
+        
+    })
+    return result;
 }
+
 
 
 // 4) ---------------------
@@ -191,7 +203,23 @@ function gradesAvg(arr) {
 // -------------
 
 function studentsResult(arr) {
-    // write your code here
+    let sum=0;
+    let result=arr.map(value=>{
+        sum=0;
+        for(let i=0;i<value.gradsList.length;i++){
+            sum+=value.gradsList[i];
+        }
+              value['avg']=sum/value.gradsList.length;
+              if(value.avg>=50){
+                  value['result']="Passed";
+              }
+              else{
+                   value['result']="Failed";
+              }
+            return value;
+        
+    })
+    return result;
 }
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
