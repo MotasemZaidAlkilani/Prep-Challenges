@@ -14,8 +14,19 @@
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
 
+let array=[];
 const recursionPattern = (int1, int2) => {
-    // write your code here
+    
+  if(int1/int2<0){
+      array.push(int1);
+  }
+else{
+    array.push(int1);
+    recursionPattern(int1-int2,int2);
+    array.push(int1);
+}
+return array;
+
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -34,6 +45,7 @@ const recursionPattern = (int1, int2) => {
 // 
 
 const filterLinks = (str) => {
+
     let start=0;
     let end=0;
     let cond1=false;
@@ -62,6 +74,7 @@ const filterLinks = (str) => {
         }
     }
     
+  
 }
 // -------------------------------------------------------------------------------------------------------
 
