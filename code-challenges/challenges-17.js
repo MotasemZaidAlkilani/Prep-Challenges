@@ -13,6 +13,7 @@
 // Input: 50, 9
 // Output: [50, 41, 32, 23, 14, 5, -4, 5, 14, 23, 32, 41, 50]
 //
+
 let array=[];
 const recursionPattern = (int1, int2) => {
     
@@ -25,6 +26,7 @@ else{
     array.push(int1);
 }
 return array;
+
 }
 // -------------------------------------------------------------------------------------------------------
 
@@ -43,7 +45,36 @@ return array;
 // 
 
 const filterLinks = (str) => {
-    // write your code here
+
+    let start=0;
+    let end=0;
+    let cond1=false;
+    let cond2=false;
+    for(let i=0;i<str.length;i++){
+        if(str.charAt(i)=='/'&&str.charAt(i+1)=='/'){
+            cond1=true;
+            start=i+2;
+        }
+        else if(str.charAt(i)=='w'&&str.charAt(i+1)=='w'&&str.charAt(i+2)=='.'){
+            let j=i+3;
+            let temp_cond=true;
+            while(temp_cond){
+                if(str.charAt(j)=='.'){
+                    cond2=true;
+                    end=j+4;
+                    break;
+                }
+               j++;
+            }
+            
+        }
+        if(cond1&&cond2){
+            return str.substring(start,end);
+            break;
+        }
+    }
+    
+  
 }
 // -------------------------------------------------------------------------------------------------------
 
